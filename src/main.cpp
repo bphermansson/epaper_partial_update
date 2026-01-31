@@ -26,8 +26,8 @@ void loop() {
     previousMillis = currentMillis;
     updateCounter++;
 
-    if (updateCounter >= 60) {
-      fullRefresh(10, 10, "Refresh");
+    if (updateCounter >= 5) {
+      fullRefresh(10, 10, "Partial refresh demo");
       updateCounter = 0; // Nollställ räknaren
     } 
     else {

@@ -1,9 +1,9 @@
 #pragma once
 
 #define ENABLE_GxEPD2_display 0
-#define SCREEN_WIDTH 296
-#define SCREEN_HEIGHT 128
-#define SCREEN_IS_BW // Red Black White color
+#define SCREEN_WIDTH 250
+#define SCREEN_HEIGHT 122
+#define SCREEN_IS_BW // Black White color
 
 // Connections for ESP32
 static const uint8_t EPD_BUSY = 3; // to EPD BUSY 24 is labled as 'TX'
