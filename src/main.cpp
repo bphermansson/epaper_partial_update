@@ -16,7 +16,11 @@ void setup() {
   Serial.println("Starting...");  
   initialiseDisplay();
   drawString(10, 10, "Partial refresh demo");
-  partialRefresh(x, y, w, h, String(updateCounter));
+  partialRefresh(20, 50, 60, 20, 1, 14, String(updateCounter));
+  partialRefresh(45, 50, 80, 25, 2, 18, String(updateCounter));
+  partialRefresh(70, 50, 100, 30, 3, 24, String(updateCounter));
+  partialRefresh(95, 50, 60, 30, 4, 32, String(updateCounter));
+  partialRefresh(120, 50, 80, 35, 5, 42, String(updateCounter));
 }
 
 void loop() {
@@ -27,11 +31,15 @@ void loop() {
     updateCounter++;
 
     if (updateCounter >= 5) {
-      fullRefresh(10, 10, "Partial refresh demo");
+      fullRefresh(20, 20, "Partial refresh demo!");
       updateCounter = 0; // Nollställ räknaren
     } 
     else {
-      partialRefresh(x, y, w, h, String(updateCounter));
+      partialRefresh(20, 50, 60, 20, 1, 14, String(updateCounter));
+      partialRefresh(45, 50, 80, 25, 2, 18, String(updateCounter));
+      partialRefresh(70, 50, 100, 30, 3, 24, String(updateCounter));
+      partialRefresh(95, 50, 60, 30, 4, 32, String(updateCounter));
+      partialRefresh(120, 50, 80, 35, 5, 42, String(updateCounter));
     }
   }
 }

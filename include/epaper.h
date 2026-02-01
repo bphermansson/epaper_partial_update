@@ -17,5 +17,5 @@ static const uint8_t EPD_MOSI = 6;  // to EPD DIN / SDA
 void initialiseDisplay();
 void drawString(int x, int y, String text);
 void fullRefresh(int x, int y, String text);
-void partialRefresh(int16_t x, int16_t y, int16_t w, int16_t h, String text);
+void partialRefresh(int16_t x, int16_t y, int16_t w, int16_t h, int size, int yOffset, String text);
 void drawString(int x, int y, String text);

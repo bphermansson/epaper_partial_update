@@ -26,15 +26,37 @@ void initialiseDisplay() {
   display.setFullWindow();
 }
 
-void partialRefresh(int16_t x, int16_t y, int16_t w, int16_t h, String text) {
+void partialRefresh(int16_t x, int16_t y, int16_t w, int16_t h, int size, int yOffset, String text) {
     display.setPartialWindow(x, y, w, h);
     display.firstPage();
     do {
         display.fillScreen(GxEPD_WHITE);  // Rensa området
         u8g2Fonts.setForegroundColor(GxEPD_BLACK);
         u8g2Fonts.setBackgroundColor(GxEPD_WHITE);
-        u8g2Fonts.setFont(u8g2_font_helvR14_tf);  // Välj font
-        u8g2Fonts.setCursor(x, y + 12);  // +12 för baseline
+        const uint8_t* fontname; 
+
+        switch(size) {
+            case 1:
+                fontname = u8g2_font_helvR14_tf;
+                break;
+            case 2:
+                fontname = u8g2_font_helvR18_tf;
+                break;
+            case 3:
+                fontname = u8g2_font_helvR24_tf;
+                break;
+            case 4:
+                fontname = u8g2_font_logisoso32_tf; 
+                break;
+            case 5:
+                fontname = u8g2_font_inb42_mn;     
+                break;
+            default:
+                fontname = u8g2_font_helvR14_tf;
+                break;
+        }
+        u8g2Fonts.setFont(fontname);
+        u8g2Fonts.setCursor(x, y + yOffset);
         u8g2Fonts.print(text);
     } while (display.nextPage());
     Serial.println("Partial refresh done.");
