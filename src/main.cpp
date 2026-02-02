@@ -16,11 +16,13 @@ void setup() {
   Serial.println("Starting...");  
   initialiseDisplay();
   drawString(10, 10, "Partial refresh demo");
-  partialRefresh(20, 50, 60, 20, 1, 14, String(updateCounter));
-  partialRefresh(45, 50, 80, 25, 2, 18, String(updateCounter));
-  partialRefresh(70, 50, 100, 30, 3, 24, String(updateCounter));
-  partialRefresh(95, 50, 60, 30, 4, 32, String(updateCounter));
-  partialRefresh(120, 50, 80, 35, 5, 42, String(updateCounter));
+    partialRefresh(10, 40, 60, 20, 1, 14, String(updateCounter));
+    partialRefresh(80, 40, 70, 25, 2, 18, String(updateCounter));
+    partialRefresh(160, 40, 45, 30, 3, 24, String(updateCounter));
+    
+    // Rad 2  
+    partialRefresh(10, 80, 80, 35, 4, 32, String(updateCounter));
+    partialRefresh(100, 80, 100, 45, 5, 42, String(updateCounter));
 }
 
 void loop() {
@@ -35,11 +37,13 @@ void loop() {
       updateCounter = 0; // Nollställ räknaren
     } 
     else {
-      partialRefresh(20, 50, 60, 20, 1, 14, String(updateCounter));
-      partialRefresh(45, 50, 80, 25, 2, 18, String(updateCounter));
-      partialRefresh(70, 50, 100, 30, 3, 24, String(updateCounter));
-      partialRefresh(95, 50, 60, 30, 4, 32, String(updateCounter));
-      partialRefresh(120, 50, 80, 35, 5, 42, String(updateCounter));
+    partialRefresh(10, 40, 60, 20, 1, 14, String(updateCounter));
+    partialRefresh(80, 40, 70, 25, 2, 18, String(updateCounter));
+    partialRefresh(160, 40, 45, 30, 3, 24, String(updateCounter));
+    
+    // Rad 2  
+    partialRefresh(10, 80, 80, 35, 4, 32, String(updateCounter));
+    partialRefresh(100, 80, 100, 45, 5, 42, String(updateCounter));
     }
   }
 }
